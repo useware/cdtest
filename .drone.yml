@@ -7,6 +7,11 @@ pipeline:
     commands:
       - git fetch --tags
 
+  test:
+    image: golang:latest
+    commands:
+      - go test -v
+
   release:
     when:
       event:
